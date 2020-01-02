@@ -18,6 +18,18 @@ public class App {
 		linkedList.getSize();
 		linkedList.printList();
 		
+		Employee john= new Employee("john", "yadav", 3);
+		linkedList.addToEnd(john);
+		linkedList.printList();
+		
+		linkedList.removeFromFront();
+		linkedList.printList();
+		
+		linkedList.removeFromEnd();
+		linkedList.printList();
+		
+		
+		
 		
 	}
 
