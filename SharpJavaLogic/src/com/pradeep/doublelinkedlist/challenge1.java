@@ -105,19 +105,19 @@ public class challenge1 {
 			
 			list.printList();
 			
-			for(int num=10;num<15;num++)
-				list.addToBack(num);
-			
-				
-				list.printList();
-				
-				list.removeFromFront();
-
-				list.printList();
-				
-				list.removeFromEnd();
-
-				list.printList();
+//			for(int num=10;num<15;num++)
+//				list.addToBack(num);
+//			
+//				
+//				list.printList();
+//				
+//				list.removeFromFront();
+//
+//				list.printList();
+//				
+//				list.removeFromEnd();
+//
+//				list.printList();
 				
 				list.addBefore(25, 1);
 				

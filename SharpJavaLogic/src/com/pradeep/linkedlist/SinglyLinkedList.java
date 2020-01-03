@@ -34,13 +34,29 @@ public class SinglyLinkedList {
 			System.out.print(" ->");
 			current=current.next;
 		}
-		System.out.print("null");
+		System.out.print("null \n");
 	}
 	
 	public void removeFromFront() {
 		
 		head=head.next;
 		
+	}
+	
+	
+	public void addbefore(int num,int present) {
+		Node current=head;
+		
+		while(current!=null) {
+			if(current.num==present) {
+				Node node= new Node(num);
+				node.next=current.next;
+				current.next=node;
+				
+				return;
+			}
+			current=current.next;
+		}
 	}
 	
 
@@ -55,23 +71,27 @@ public class SinglyLinkedList {
 		}
 		list.printList();
 		
-		for (int i = 0; i < 5; i++) {
-			list.removeFromFront();
-			System.out.println();
-			list.printList();
-		}
+//		for (int i = 0; i < 5; i++) {
+//			list.removeFromFront();
+//			System.out.println();
+//			list.printList();
+//		}
+//		
+//
+//		for (int i = 0; i < 8; i++) {
+//			list.addToFront(i);
+//			
+//		}
+//		
+//		for (int i = 0; i < 5; i++) {
+//			list.removeFromFront();
+//			System.out.println();
+//			list.printList();
+//		}
 		
-
-		for (int i = 0; i < 8; i++) {
-			list.addToFront(i);
-			
-		}
+		list.addbefore(8, 3+1);
 		
-		for (int i = 0; i < 5; i++) {
-			list.removeFromFront();
-			System.out.println();
-			list.printList();
-		}
+		list.printList();
 		
 		
 
