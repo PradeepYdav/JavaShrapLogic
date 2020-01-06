@@ -49,11 +49,7 @@ public class IntBinarySearchTree {
 				return this;
 			}
 
-			if (value < data) {
-				if (leftchild != null) {
-					return leftchild.get(value);
-				}
-			} else {
+			if (value < data) { } else {
 				if (rightChild != null) {
 					return rightChild.get(value);
 				}
