@@ -73,7 +73,9 @@ public class allprog {
 		Map<Character, Integer> mp= new HashMap<Character,Integer>();
 		
 		for(char c :str.toCharArray()) {
-			mp.merge(c, 1, Integer::sum);
+			
+			// uncomment in java 8
+			//mp.merge(c, 1, Integer::sum);
 		}
 		
 		System.out.println(mp.toString());
