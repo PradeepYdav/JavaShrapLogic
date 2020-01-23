@@ -1,6 +1,5 @@
 package com.pradeep.LinkedListQuestions;
 
-import java.util.Currency;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
