@@ -98,14 +98,29 @@ public class MirrorImage {
 	}
 	
 	public int getLevel(int key) {
-		int value=getrec(root,key);
+		int level=0;
+		int value=getrec(root,key, level);
 		
 		return value;
 	}
 
-//	private int getrec(Node root, int key) {
-//		retuen 0;
-//	}
+
+	private int getrec(Node root, int key, int level) {
+		
+		if(root==null || root.key==key) {
+			return level;
+		}
+	
+		
+		if(key<root.key) {
+			return getrec(root.left,key,level+1);
+		}
+		else if(key>root.key) {
+			return getrec(root.right,key,level+1);
+		}
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -121,12 +136,16 @@ public class MirrorImage {
 	    
 	    bt.inorder();
 	    System.out.println("\n");
-	    bt.mirror();
+	   // bt.mirror();
 	    
-	    bt.inorder();
-	    System.out.println("\n");
+//	    bt.inorder();
+//	    System.out.println("\n");
+//	    
+//	    bt.printDfs();
 	    
-	    bt.printDfs();
+	    System.out.println(bt.getLevel(8));
+	    
+	    int [] array= new int[5];
 
 	}
 
