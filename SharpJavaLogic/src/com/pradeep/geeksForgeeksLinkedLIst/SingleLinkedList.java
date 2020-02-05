@@ -1,5 +1,9 @@
 package com.pradeep.geeksForgeeksLinkedLIst;
 
+import java.util.Stack;
+
+import javax.swing.text.DefaultEditorKit.CutAction;
+
 public class SingleLinkedList {
 	Node head;
 	class Node {
@@ -95,29 +99,106 @@ public class SingleLinkedList {
 		}
 		return findrec(head2.next,key);
 	}
+	
+	public void printMiddle() {
+		Node slow = head;
+		Node fast = head;
+		
+		while(fast!=null && fast.next!=null) {
+			slow=slow.next;
+			fast=fast.next.next;
+		}
+		
+		System.out.println(slow.data);
+		
+		
+		
+	}
+	
+	public void checkPalindrome() {
+		Node current=head;
+		Node current2=head;
+		
+		
+		boolean isPalim=true;
+		Stack<Integer> stack= new Stack<Integer>();
+		
+		while(current!=null) {
+			stack.add(current.data);
+			current=current.next;
+		}
+		
+		while(current2!=null) {
+			int i=stack.pop();
+			if(current2.data==i) {
+				isPalim=true;
+			}else {
+				isPalim=false;
+				break;
+			}
+			current2=current2.next;
+		}
+		
+		System.out.println(isPalim);
+		
+		
+		
+	}
+	
+	public void  removeduplicates() {
+		Node current=head;
+		while(current!=null) {
+			Node temp=current;
+			while(temp!=null && temp.data==current.data) {
+				temp=temp.next;
+			}
+			current.next=temp;
+			current=current.next;
+		}
+		
+		
+	
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		SingleLinkedList list= new SingleLinkedList();
-		for(int i=0;i<6;i++) {
-			list.insert(i);
-		}
+//		for(int i=0;i<8;i++) {
+//			list.insert(i);
+//		}
+//		
+//		list.printList();
+//		
+//		list.deleteKey(4);
+//		list.printList();
+//		//list.deleteLinkedlist();
+//		
+//		//list.printList();
+//		
+//		list.length();
+//		
+//		System.out.println(list.lengthrec());
+//		
+//		System.out.println(list.find(8));
+//		System.out.println(list.findr(5));
+//		
+//		list.printMiddle();
+//		
+//		list.insert(1);
+//		list.insert(2);
+//		list.insert(2);
+//		list.insert(1);
+//		
+//		list.checkPalindrome();
+//		
+		list.insert(1);
+		list.insert(2);
+		list.insert(2);
+		list.insert(3);
 		
+		list.removeduplicates();
 		list.printList();
-		
-		list.deleteKey(4);
-		list.printList();
-		//list.deleteLinkedlist();
-		
-		//list.printList();
-		
-		list.length();
-		
-		System.out.println(list.lengthrec());
-		
-		System.out.println(list.find(8));
-		System.out.println(list.findr(5));
 		
 		
 
